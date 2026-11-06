@@ -1,36 +1,273 @@
-<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>HamTools – program dla krótkofalowców | SQ2JSJ</title><meta name="description" content="HamTools – mapa APRS, zasięg łącza radiowego, propagacja KF, lokator QTH. Program dla Windows.">
-<link rel="icon" href="../assets/favicon.png"><link rel="stylesheet" href="../assets/style.css"></head><body>
-<header><div class="wrap"><a class="logo" href="../index.html">SQ<span>2</span>JSJ</a><nav><a href="../index.html#programy">Programy</a><a href="#funkcje">Funkcje</a><a href="#pobierz">Pobierz</a></nav></div></header>
-<main class="wrap">
-<div class="phead"><img src="../assets/img/hamtools-icon.png" alt="Ikona HamTools"><div><div class="tag">Program dla krótkofalowców · Windows</div><h1>HamTools <span class="badge">0.4.11 BETA</span></h1></div></div>
-<p style="font-size:18px;max-width:800px">Mapa APRS, zasięg i profil łącza radiowego z uwzględnieniem terenu, lasów i zabudowy (wynik w jednostkach S), propagacja KF, lokator QTH i przeliczanie współrzędnych – wszystko w jednym programie.</p>
-<p><a class="btn" href="#pobierz">Wymagania</a><a class="btn ghost" href="#galeria">Zrzuty ekranu</a></p>
-<section id="funkcje"><h2>Funkcje</h2><div class="feat">
-<div><h3>APRS</h3><p>Stacje APRS na mapie na żywo, szczegóły stacji, śledzenie i podgląd pakietów.</p></div>
-<div><h3>Mapa</h3><p>Pomiar odległości i azymutu z przekrojem terenu wzdłuż trasy.</p></div>
-<div><h3>Zasięg</h3><p>Osobne parametry każdej stacji, anteny Yagi i logperiodyczne z polaryzacją, straty kabli i złączy, wynik w jednostkach S oraz raporty PDF.</p></div>
-<div><h3>Propagacja</h3><p>Mapy propagacji VOACAP i aktualne dane słoneczne dla pasm KF.</p></div>
-<div><h3>Współrzędne</h3><p>Przeliczanie WGS84 / DMS / UTM / MGRS / lokator QTH oraz wysokość n.p.m.</p></div>
-<div><h3>Praca offline</h3><p>Pobieranie wybranego regionu mapy do pracy bez internetu. Do wyboru 3 warstwy mapy.</p></div>
-</div></section>
-<section id="galeria"><h2>Zrzuty ekranu</h2><div class="gal">
-<figure><img src="../assets/img/01-glowne.jpg" alt="Główne okno – stacje APRS na mapie" loading="lazy"><figcaption>Główne okno – stacje APRS na mapie</figcaption></figure>
-<figure><img src="../assets/img/16-przekroj.jpg" alt="Pomiar odległości z przekrojem terenu" loading="lazy"><figcaption>Pomiar odległości z przekrojem terenu</figcaption></figure>
-<figure><img src="../assets/img/27-wynik-lacza.jpg" alt="Wynik łącza radiowego z profilem terenu" loading="lazy"><figcaption>Wynik łącza radiowego z profilem terenu</figcaption></figure>
-<figure><img src="../assets/img/32-pokrycie-mapa.jpg" alt="Mapa pokrycia (zasięgu) stacji" loading="lazy"><figcaption>Mapa pokrycia (zasięgu) stacji</figcaption></figure>
-<figure><img src="../assets/img/32b-pokrycie-szara.jpg" alt="Pokrycie (zasięg) stacji na szarej warstwie mapy" loading="lazy"><figcaption>Pokrycie (zasięg) stacji na szarej warstwie mapy</figcaption></figure>
-<figure><img src="../assets/img/33-pokrycie-dwukolor.jpg" alt="Pokrycie w trybie dwukolorowym" loading="lazy"><figcaption>Pokrycie w trybie dwukolorowym</figcaption></figure>
-<figure><img src="../assets/img/19-propagacja.jpg" alt="Propagacja KF – mapa SNR dla pasma 40 m i dane słoneczne" loading="lazy"><figcaption>Propagacja KF – mapa SNR dla pasma 40 m i dane słoneczne</figcaption></figure>
-<figure><img src="../assets/img/37-voacap-mapa.jpg" alt="VOACAP – trasa propagacji KF między dwoma punktami" loading="lazy"><figcaption>VOACAP – trasa propagacji KF między dwoma punktami</figcaption></figure>
-<figure><img src="../assets/img/13-mapa-topo-qth.jpg" alt="Siatka lokatora QTH na mapie topograficznej" loading="lazy"><figcaption>Siatka lokatora QTH na mapie topograficznej</figcaption></figure>
-<figure><img src="../assets/img/14-mapa-sat-wsp.jpg" alt="Warstwa satelitarna z siatką współrzędnych" loading="lazy"><figcaption>Warstwa satelitarna z siatką współrzędnych</figcaption></figure>
-<figure><img src="../assets/img/16b-offline.jpg" alt="Pobieranie regionu do pracy offline" loading="lazy"><figcaption>Pobieranie regionu do pracy offline</figcaption></figure>
-</div></section>
-<section id="pobierz"><h2>Pobierz</h2><div class="req"><h3 style="margin-top:0">Wymagania</h3><ul>
-<li>Windows 10 lub 11 (z WebView2 – standardowo w systemie)</li><li>Instalator .exe</li><li>Wersja: <strong>0.4.11 BETA</strong></li></ul>
-<span class="badge soonbadge">Wkrótce do pobrania</span>
-<p style="color:var(--mut);font-size:14px;margin-bottom:0">To wersja testowa (BETA) – mogą występować błędy. Uwagi mile widziane.</p></div></section>
-</main><div id="lb"><img alt=""></div><footer><div class="wrap"><span>Opracował: Jacek SQ2JSJ</span><span>73 de SQ2JSJ</span></div></footer>
-<script>const lb=document.getElementById('lb');document.querySelectorAll('.gal img').forEach(i=>i.onclick=()=>{lb.firstChild.src=i.src;lb.style.display='flex'});lb.onclick=()=>lb.style.display='none';</script>
-</body></html>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HamTools – program dla krótkofalowców | SQ2JSJ</title>
+  <meta name="description" content="HamTools – mapa APRS, zasięg łącza radiowego, propagacja KF, lokator QTH. Program dla Windows.">
+  <meta name="theme-color" content="#070d12">
+  <link rel="icon" href="../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+  <a class="skip" href="#tresc">Przejdź do treści</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="../index.html">SQ<span>2</span>JSJ</a>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav">
+        <a href="../index.html#programy">Programy</a>
+        <a href="#funkcje">Funkcje</a>
+        <a href="#pobierz">Pobierz</a>
+      </nav>
+    </div>
+  </header>
+  <main id="tresc" class="wrap">
+    <div class="phead reveal">
+      <div class="phead-icon">
+        <img src="../assets/img/hamtools-icon.png" alt="Ikona HamTools" width="128" height="128">
+      </div>
+      <div>
+        <p class="tag"><span class="dot" aria-hidden="true"></span>Program dla krótkofalowców · Windows</p>
+        <h1>HamTools <span class="badge">0.4.11 BETA</span></h1>
+        <p class="lead">Mapa APRS, zasięg i profil łącza radiowego z uwzględnieniem terenu, lasów i zabudowy (wynik w jednostkach S), propagacja KF, lokator QTH i przeliczanie współrzędnych – wszystko w jednym programie.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#pobierz">Wymagania</a>
+          <a class="btn ghost" href="#galeria">Zrzuty ekranu</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="funkcje">
+      <h2 class="reveal">Funkcje</h2>
+      <div class="feat">
+        <article class="reveal">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 21s-6.2-5.2-6.2-10.4a6.2 6.2 0 1 1 12.4 0C18.2 15.8 12 21 12 21z"/>
+              <circle cx="12" cy="10.6" r="2.1"/>
+              <path d="M17.8 4.2c1.6 1.4 2.5 3.3 2.5 5.4" opacity=".85"/>
+              <path d="M6.2 4.2C4.6 5.6 3.7 7.5 3.7 9.6" opacity=".85"/>
+            </svg>
+          </div>
+          <h3>APRS</h3>
+          <p>Stacje APRS na mapie na żywo, szczegóły stacji, śledzenie i podgląd pakietów.</p>
+        </article>
+        <article class="reveal reveal-delay-1">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+              <line x1="9" y1="3" x2="9" y2="18"/>
+              <line x1="15" y1="6" x2="15" y2="21"/>
+            </svg>
+          </div>
+          <h3>Mapa</h3>
+          <p>Pomiar odległości i azymutu z przekrojem terenu wzdłuż trasy.</p>
+        </article>
+        <article class="reveal reveal-delay-2">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="2"/>
+              <path d="M12 5a7 7 0 0 1 7 7"/>
+              <path d="M12 2a10 10 0 0 1 10 10"/>
+              <path d="M5 19l3-3"/>
+            </svg>
+          </div>
+          <h3>Zasięg</h3>
+          <p>Osobne parametry każdej stacji, anteny Yagi i logperiodyczne z polaryzacją, straty kabli i złączy, wynik w jednostkach S oraz raporty PDF.</p>
+        </article>
+        <article class="reveal">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="6.2" r="2.3"/>
+              <path d="M12 2v1.1M7.9 3.4l.8.8M16.1 3.4l-.8.8M5.4 6.2h1.2M17.4 6.2h1.2"/>
+              <path d="M3 13.8q2.6-3.2 5.2 0t5.2 0 5.2 0 5.2 0"/>
+              <path d="M3 18.6q2.6-3.2 5.2 0t5.2 0 5.2 0 5.2 0"/>
+            </svg>
+          </div>
+          <h3>Propagacja</h3>
+          <p>Mapy propagacji VOACAP i aktualne dane słoneczne dla pasm KF.</p>
+        </article>
+        <article class="reveal reveal-delay-1">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="8"/>
+              <path d="M12 4v16M4 12h16"/>
+              <path d="M8 8l8 8M16 8l-8 8" opacity=".45"/>
+            </svg>
+          </div>
+          <h3>Współrzędne</h3>
+          <p>Przeliczanie WGS84 / DMS / UTM / MGRS / lokator QTH oraz wysokość n.p.m.</p>
+        </article>
+        <article class="reveal reveal-delay-2">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v12"/>
+              <path d="M7 11l5 5 5-5"/>
+              <path d="M5 19h14"/>
+              <path d="M4 15H3a1 1 0 0 0-1 1v5h4"/>
+              <path d="M20 15h1a1 1 0 0 1 1 1v5h-4"/>
+            </svg>
+          </div>
+          <h3>Praca offline</h3>
+          <p>Pobieranie wybranego regionu mapy do pracy bez internetu. Do wyboru 3 warstwy mapy.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <h2 class="reveal">Zrzuty ekranu</h2>
+      <div class="gal">
+        <figure>
+          <div class="thumb">
+            <img src="../assets/img/01-glowne.jpg" alt="Główne okno – stacje APRS na mapie" loading="lazy" width="640" height="400">
+            <span class="zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+            </span>
+          </div>
+          <figcaption>Główne okno – stacje APRS na mapie</figcaption>
+        </figure>
+        <figure>
+          <div class="thumb">
+            <img src="../assets/img/16-przekroj.jpg" alt="Pomiar odległości z przekrojem terenu" loading="lazy" width="640" height="400">
+            <span class="zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+            </span>
+          </div>
+          <figcaption>Pomiar odległości z przekrojem terenu</figcaption>
+        </figure>
+        <figure>
+          <div class="thumb">
+            <img src="../assets/img/27-wynik-lacza.jpg" alt="Wynik łącza radiowego z profilem terenu" loading="lazy" width="640" height="400">
+            <span class="zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+            </span>
+          </div>
+          <figcaption>Wynik łącza radiowego z profilem terenu</figcaption>
+        </figure>
+        <figure>
+          <div class="thumb">
+            <img src="../assets/img/32-pokrycie-mapa.jpg" alt="Mapa pokrycia (zasięgu) stacji" loading="lazy" width="640" height="400">
+            <span class="zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+            </span>
+          </div>
+          <figcaption>Mapa pokrycia (zasięgu) stacji</figcaption>
+        </figure>
+        <figure>
+          <div class="thumb">
+            <img src="../assets/img/32b-pokrycie-szara.jpg" alt="Pokrycie (zasięg) stacji na szarej warstwie mapy" loading="lazy" width="640" height="400">
+            <span class="zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+            </span>
+          </div>
+          <figcaption>Pokrycie (zasięg) stacji na szarej warstwie mapy</figcaption>
+        </figure>
+        <figure>
+          <div class="thumb">
+            <img src="../assets/img/33-pokrycie-dwukolor.jpg" alt="Pokrycie w trybie dwukolorowym" loading="lazy" width="640" height="400">
+            <span class="zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+            </span>
+          </div>
+          <figcaption>Pokrycie w trybie dwukolorowym</figcaption>
+        </figure>
+        <figure>
+          <div class="thumb">
+            <img src="../assets/img/19-propagacja.jpg" alt="Propagacja KF – mapa SNR dla pasma 40 m i dane słoneczne" loading="lazy" width="640" height="400">
+            <span class="zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+            </span>
+          </div>
+          <figcaption>Propagacja KF – mapa SNR dla pasma 40 m i dane słoneczne</figcaption>
+        </figure>
+        <figure>
+          <div class="thumb">
+            <img src="../assets/img/37-voacap-mapa.jpg" alt="VOACAP – trasa propagacji KF między dwoma punktami" loading="lazy" width="640" height="400">
+            <span class="zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+            </span>
+          </div>
+          <figcaption>VOACAP – trasa propagacji KF między dwoma punktami</figcaption>
+        </figure>
+        <figure>
+          <div class="thumb">
+            <img src="../assets/img/13-mapa-topo-qth.jpg" alt="Siatka lokatora QTH na mapie topograficznej" loading="lazy" width="640" height="400">
+            <span class="zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+            </span>
+          </div>
+          <figcaption>Siatka lokatora QTH na mapie topograficznej</figcaption>
+        </figure>
+        <figure>
+          <div class="thumb">
+            <img src="../assets/img/14-mapa-sat-wsp.jpg" alt="Warstwa satelitarna z siatką współrzędnych" loading="lazy" width="640" height="400">
+            <span class="zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+            </span>
+          </div>
+          <figcaption>Warstwa satelitarna z siatką współrzędnych</figcaption>
+        </figure>
+        <figure>
+          <div class="thumb">
+            <img src="../assets/img/16b-offline.jpg" alt="Pobieranie regionu do pracy offline" loading="lazy" width="640" height="400">
+            <span class="zoom" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+            </span>
+          </div>
+          <figcaption>Pobieranie regionu do pracy offline</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="pobierz">
+      <h2 class="reveal">Pobierz</h2>
+      <div class="req reveal">
+        <div>
+          <h3>Wymagania</h3>
+          <ul>
+            <li>Windows 10 lub 11 (z WebView2 – standardowo w systemie)</li>
+            <li>Instalator .exe</li>
+            <li>Wersja: <strong>0.4.11 BETA</strong></li>
+          </ul>
+        </div>
+        <div class="req-cta">
+          <span class="badge soonbadge">Wkrótce do pobrania</span>
+          <p class="note">To wersja testowa (BETA) – mogą występować błędy. Uwagi mile widziane.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Podgląd zrzutu ekranu">
+    <span class="lb-count" aria-live="polite"></span>
+    <button class="lb-btn lb-close" type="button" aria-label="Zamknij">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Poprzednie zdjęcie">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-8 7 8 7"/></svg>
+    </button>
+    <figure>
+      <img alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button class="lb-btn lb-next" type="button" aria-label="Następne zdjęcie">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l8 7-8 7"/></svg>
+    </button>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>Opracował: Jacek SQ2JSJ</span>
+      <span class="footer-73">73 de SQ2JSJ</span>
+    </div>
+  </footer>
+  <script src="../assets/app.js"></script>
+</body>
+</html>
